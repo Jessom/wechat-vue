@@ -1,0 +1,38 @@
+@import './variable.scss';
+@import './reset.scss';
+@import './sidebar.scss';
+@import './listbar.scss';
+@import './container.scss';
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+body {
+  background: transparent url(http://b-ssl.duitang.com/uploads/item/201502/08/20150208174429_wnhM5.jpeg) center / 100% 100% no-repeat;
+}
+
+.list-container,
+.side-bar {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

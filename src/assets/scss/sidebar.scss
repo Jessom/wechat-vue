@@ -1,0 +1,49 @@
+.side-bar {
+  background-color: $barBg;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+
+  /* mac 按钮样式 */
+  .mac-btns {
+    font-size: 0;
+    .mac-btn {
+      display: inline-block;
+      border-radius: 50%;
+      width: $macBtnSize;
+      height: $macBtnSize;
+      line-height: $macBtnSize;
+      text-align: center;
+      color: #460804;
+      margin: 0 3px;
+      &.mac-btn_close { background-color: $close; }
+      &.mac-btn_min { background-color: $min; }
+      &.mac-btn_max { background-color: $max; }
+    }
+    .iconfont { font-size: 12px; opacity: 0; transition: opacity .3s; }
+    &:hover .iconfont { opacity: 1; }
+  }
+
+  /* 用户头像 */
+  .side-avatar {
+    text-align: center; margin: 40px 0 20px;
+    img { border-radius: $radius; width: $avatarSize; height: $avatarSize; }
+  }
+
+  /* 菜单组 */
+  .side-menus {
+    .side-menu_item {
+      padding: 10px 0;
+      .iconfont { font-size: $menuFontSize; color: $barText; }
+      .iconfont.actived { color: $barActiveText; }
+    }
+  }
+
+  .side-menu {
+    font-size: $menuFontSize; color: $barText;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

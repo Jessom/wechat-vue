@@ -1,0 +1,56 @@
+// base color
+$theme: #54b738 !default;
+
+// sidebar
+$barBg: #1d1a18 !default;
+$barText: #a7a6a5 !default;
+$barActiveText: $theme !default;
+
+// text
+$text: #000000 !default;
+$subText: #969696 !default;
+
+// notice
+$notice: #e1473c !default;
+
+// firends list
+$itemBg: #fbfbfb !default;
+$itemActiveBg: #cccccc !default;
+
+// chat
+$chatTopBg: #f5f5f5 !default;
+$chatContentBg: #f3f3f3 !default;
+$chatBottomBg: #f5f3f2 !default;
+
+// line
+$itemLine: #eeeeee !default;
+$chatLine: #e2e2e2 !default;
+
+// search
+$searchBg: #e6e6e6 !default;
+$searchColor: #c7c6c7 !default;
+$plusColor: #7f7f7f !default;
+$searchLine: #d5d5d5 !default;
+
+// mac btn
+$max: #62c655 !default;
+$min: #f6be4f !default;
+$close: #ed6c61 !default;
+$macBtnSize: 12px !default;
+
+// size
+$boxWidth: 1000px !default;         /* 微信整体宽度 */
+$boxHeight: 640px !default;         /* 微信整体高度 */
+$sidebarWidth: 70px !default;       /* 工具栏宽度 */
+$itemWidth: 240px !default;         /* 好友列表宽度 */
+$itemHeight: 70px !default;         /* 好友列表每个cell高度 */
+$chatTopHeight: 60px !default;      /* 聊天区域顶部、搜索区域高度 */
+$chatBottomHeight: 160px !default;  /* 聊天大字区域高度 */
+$chatFaceHeight: 40px !default;     /* 表情区域高度 */
+
+$avatarSize: 44px !default;         /* 用户头像、好友列表头像大小 */
+$chatAvatarSize: 34px !default;     /* 聊天头像大小 */
+
+$radius: 5px !default;              /* 头像、整体容器圆角 */
+
+$menuFontSize: 26px !default;       /* sidebar 图标大小 */

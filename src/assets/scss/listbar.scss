@@ -1,0 +1,51 @@
+.list-container {
+  background-color: $itemBg;
+  border-right: 1px solid $itemLine;
+}
+.chat-item {
+  display: flex; flex-direction: row;
+}
+
+.chat-list { overflow-y: scroll; height: calc(100% - 60px); }
+
+.chat-item {
+  padding: 10px;
+  // height: $itemHeight;
+  box-sizing: border-box;
+  position: relative;
+  .chat-avatar {
+    flex: 0 0 $avatarSize; height: $avatarSize;
+    img { border-radius: $radius; }
+  }
+
+  .chat-content {
+    width: calc(100% - 44px);
+    padding-left: 5px;
+    box-sizing: border-box;
+    position: relative;
+    height: $avatarSize;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.7;
+    .chat-time {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .chat-title { font-size: 14px; color: $text; }
+    .chat-time, .chat-desc {
+      font-size: 13px; color: $subText;
+    }
+  }
+
+  &::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    background-color: $chatLine;
+  }
+}
