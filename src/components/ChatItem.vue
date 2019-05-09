@@ -1,6 +1,7 @@
 <template>
   <div class="chat-list">
-    <div
+    <router-link
+      :to="{path: `/chat/${item.id}`}"
       class="chat-item"
       v-for='(item, ind) in list'
       :key='ind'>
@@ -12,7 +13,7 @@
         <p class="chat-desc ellipsis">{{ item.desc }}</p>
         <time class="chat-time">{{ item.time }}</time>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -27,7 +28,7 @@ export default {
 
   data () {
     return {}
-  },
+  }
 }
 </script>
 

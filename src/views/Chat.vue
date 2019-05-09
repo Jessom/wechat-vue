@@ -16,7 +16,7 @@
 
     <div class="content-container">
       <chat-topbar />
-      <router-view></router-view>
+      <router-view :key='activedId'></router-view>
       <chart-content />
     </div>
   </div>
@@ -32,9 +32,21 @@ export default {
     ChatTopbar,
     ChartContent
   },
-  data () {
-    return {
-      list: [
+
+  created() {
+    
+  },
+
+  watch: {
+    '$route'(to, form) {
+      this.activedId = Number(to.params.id)
+    }
+  },
+
+  mounted() {
+    this.activedId = Number(this.$route.params.id)
+    setTimeout(() => {
+      this.list = [
         { id: 1, name: '凉风青叶', time: '15:32', desc: '今天天气真好，一块出去玩啊[期待][期待]', avatar: 'http://img.tukexw.com/img/2fa7f932c357459c.jpg' },
         { id: 2, name: '樱宁宁', time: '12:36', desc: '嗯嗯', avatar: 'http://b-ssl.duitang.com/uploads/item/201707/13/20170713162007_vhGP8.jpeg' },
         { id: 3, name: '饭岛结音', time: '19/05/08', desc: '好吧，我知道了', avatar: 'http://b-ssl.duitang.com/uploads/item/201608/03/20160803184011_QBS4E.thumb.224_0.jpeg' },
@@ -47,6 +59,13 @@ export default {
         { id: 10, name: '望月红叶', time: '19/05/08', desc: '小鸣和宁宁最近都很怪怪的，是不是发生什么事了？', avatar: 'https://i2.hdslb.com/bfs/face/2930cd263041069fadafa60f3f1fa2f9436e8291.jpg' },
         { id: 11, name: '鸣海燕', time: '19/05/08', desc: '宁宁鸡是靠关系进来的！', avatar: 'http://imgsrc.baidu.com/forum/w=580;/sign=3f6eef60be119313c743ffb855030dd7/e61190ef76c6a7efa2368984f1faaf51f3de667b.jpg' },
       ]
+    }, 0)
+  },
+
+  data () {
+    return {
+      activedId: 0,
+      list: []
     }
   }
 }

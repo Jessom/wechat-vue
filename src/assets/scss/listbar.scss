@@ -4,6 +4,8 @@
 }
 .chat-item {
   display: flex; flex-direction: row;
+  &.router-link-active { background-color: $itemActiveBg; }
+  &:hover { cursor: default; }
 }
 
 .chat-list { overflow-y: scroll; height: calc(100% - 60px); }
