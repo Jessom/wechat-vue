@@ -3,6 +3,7 @@
 @import './sidebar.scss';
 @import './listbar.scss';
 @import './container.scss';
+@import './firent.scss';
 
 html {
   height: 100%;
@@ -15,6 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
 
 body {
@@ -29,6 +36,12 @@ body {
 img {
   max-width: 100%;
   vertical-align: middle;
+}
+
+.btn {
+  background-color: $theme; color: #fff; text-align: center; height: 36px; line-height: 36px;
+  border: 0; width: 120px; border-radius: $radius; outline: none; display: block; margin: 0 auto;
+  &:active { background-color: darken($theme, 10); }
 }
 
 .ellipsis {

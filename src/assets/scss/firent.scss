@@ -1,0 +1,57 @@
+.friend-list {
+  height: calc(100% - 60px); overflow-y: scroll; position: relative;
+  .friend-head {
+    color: $text; font-size: 16px; position: sticky; top: 0; padding: 10px 0; background-color: $itemBg; z-index: 1;
+    .iconfont { color: $subText; margin-right: 3px; }
+    &:hover { cursor: default; }
+  }
+
+  .friend-head { padding-left: 10px; }
+  
+  .friend-letter {
+    .friend-let_head {
+      position: relative; padding: 15px 0 10px 25px;
+      &::after {
+        content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+        height: 1px; background-color: $itemLine;
+      }
+    }
+
+    .friend-let_item {
+      padding: 10px 0 10px 25px; display: block;
+      .friend-avatar { margin-right: 7px; }
+      .name { color: $text; }
+    }
+  }
+
+  .router-link-active {
+    background-color: $itemActiveBg;
+  }
+
+  .friend-avatar { width: $avatarSize - 16; height: $avatarSize - 16; border-radius: $radius; }
+}
+
+.friend-info {
+  padding: $chatTopHeight; height: 100%; background-color: #fff;
+  .friend-info_top {
+    display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+    padding-bottom: 15px; border-bottom: 1px solid $chatLine;
+    .friend-info_t-l {
+      line-height: 1.8;
+      .title { color: $text; font-size: 24px; }
+      .desc { color: $subText; font-size: 16px; }
+    }
+    .friend-info_avatar { width: $avatarSize * 1.8; height: $avatarSize * 1.8; border-radius: $radius; }
+  }
+
+  .friend-info_content {
+    padding: 10px 0; color: $subText; font-size: 15px;
+    .us {
+      margin: 10px 0;
+      .cl { width: 50px; display: inline-block; text-align-last: justify; }
+      .cr { color: $text; margin-left: 30px; }
+    }
+  }
+
+  .btn { margin-top: 40px; }
+}

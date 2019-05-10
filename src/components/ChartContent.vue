@@ -3,7 +3,7 @@
     <!-- 表情栏 -->
     <div class="chart-contnet_col">
       <div class="chart_col-left">
-        <i class="iconfont icon-biaoqing1"></i>
+        <i class="iconfont icon-biaoqing"></i>
         <i class="iconfont icon-wenjian"></i>
         <i class="iconfont icon-jiandao"></i>
         <i class="iconfont icon-chatlist"></i>
@@ -23,7 +23,7 @@
 export default {
   data () {
     return {}
-  }
+  },
 }
 </script>
 

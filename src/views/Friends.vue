@@ -7,39 +7,31 @@
           <i class="iconfont icon-search"></i>
           <input type="seatch" placeholder="搜索" />
         </div>
-        <i class="iconfont icon-plus search_btn"></i>
       </div>
       
-      <chat-item :list='list' />
+      <friend-item :list='list' />
     </aside>
 
-
     <div class="content-container">
-      <chat-topbar />
       <keep-alive>
         <router-view :key='activedId'></router-view>
       </keep-alive>
-      <chart-content />
     </div>
   </div>
 </template>
 
 <script>
-import ChatItem from '@/components/ChatItem.vue'
-import ChatTopbar from '@/components/ChatTopbar.vue'
-import ChartContent from '@/components/ChartContent.vue'
-import { mapState } from 'vuex'
+import FriendItem from '@/components/FriendItem.vue'
+import { mapGetters } from 'vuex'
 export default {
   components: {
-    ChatItem,
-    ChatTopbar,
-    ChartContent
+    FriendItem
   },
 
-  computed: {
-    ...mapState({
-      list: 'notices'
-    })
+  data () {
+    return {
+      activedId: 0
+    }
   },
 
   watch: {
@@ -52,11 +44,11 @@ export default {
     this.activedId = Number(this.$route.params.id)
   },
 
-  data () {
-    return {
-      activedId: 0
-    }
-  }
+  computed: {
+    ...mapGetters({
+      list: 'users'
+    })
+  },
 }
 </script>
 

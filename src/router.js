@@ -13,11 +13,22 @@ export default new Router({
   }, {
     path: '/chat',
     name: 'chat',
+    // redirect: '/chat/1',
     component: () => import('./views/Chat.vue'),
     children: [{
       path: '/chat/:id',
       name: 'chats',
       component: () => import('./views/ChatList.vue')
+    }]
+  }, {
+    path: '/friend',
+    name: 'friend',
+    redirect: '/friend/1',
+    component: () => import('./views/Friends.vue'),
+    children: [{
+      path: '/friend/:id',
+      name: 'friendinfo',
+      component: () => import('./views/FriendInfo.vue')
     }]
   }]
 })

@@ -15,20 +15,36 @@
     
     <!-- 用户头像 -->
     <div class="side-avatar">
-      <img src="http://b-ssl.duitang.com/uploads/item/201707/18/20170718234203_a4yJE.jpeg" alt="">
+      <img src="http://b-ssl.duitang.com/uploads/item/201707/18/20170718234618_vAurJ.jpeg" alt="">
     </div>
 
     <!-- 切换菜单 -->
     <div class="side-menus">
-      <div class="side-menu_item">
-        <i class="iconfont icon-chat actived"></i>
-      </div>
-      <div class="side-menu_item">
-        <i class="iconfont icon-yonghuliebiao"></i>
-      </div>
-      <div class="side-menu_item">
-        <i class="iconfont icon-leixing"></i>
-      </div>
+      <router-link
+        class="side-menu_item"
+        :to="{path: `/chat/${notice && notice.uid || 1}`}"
+        exact>
+        <i
+          class="iconfont"
+          :class="[$route.path.includes('chat') ? 'icon-chat1 actived' : 'icon-chat']"></i>
+      </router-link>
+
+      <router-link
+        class="side-menu_item"
+        :to="{path: `/friend`}"
+        exact>
+        <i
+          class="iconfont"
+          :class="[$route.path.includes('friend') ? 'icon-haoyoudizhi1 actived' : 'icon-haoyoudizhi']"></i>
+      </router-link>
+
+      <router-link
+        class="side-menu_item"
+        :to="{path: `/chat/3`}">
+        <i
+          class="iconfont"
+          :class="[$route.path == '/chat/3' ? 'icon-leixing1 actived' : 'icon-leixing']"></i>
+      </router-link>
     </div>
 
     <!-- 最底部菜单 -->
@@ -37,10 +53,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'SideBar',
   data () {
     return {}
+  },
+
+  computed: {
+    ...mapGetters({
+      notice: 'notice'
+    })
   }
 }
 </script>
