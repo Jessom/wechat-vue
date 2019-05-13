@@ -15,7 +15,7 @@
     
     <!-- 用户头像 -->
     <div class="side-avatar">
-      <img src="http://b-ssl.duitang.com/uploads/item/201707/18/20170718234618_vAurJ.jpeg" alt="">
+      <img src="http://qicloud.jswei.cn/avatar.jpg" alt="">
     </div>
 
     <!-- 切换菜单 -->
@@ -40,10 +40,11 @@
 
       <router-link
         class="side-menu_item"
-        :to="{path: `/chat/3`}">
+        :to="{path: `/collection`}"
+        exact>
         <i
           class="iconfont"
-          :class="[$route.path == '/chat/3' ? 'icon-leixing1 actived' : 'icon-leixing']"></i>
+          :class="[$route.path.includes('collection') ? 'icon-leixing1 actived' : 'icon-leixing']"></i>
       </router-link>
     </div>
 

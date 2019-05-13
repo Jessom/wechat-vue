@@ -1,22 +1,20 @@
 <template>
   <div class="chat-list_wrap">
-    <div v-show='notice'>
-      <!-- 按时间分组 -->
+    <!-- 按时间分组 -->
+    <div
+      class="chat-list_cell clearfix"
+      v-for='(item, ind) in notice && notice.contents'
+      :key='ind'>
+      <time class="chat-time">{{ item.time }}</time>
+      <!-- 回复者 -->
       <div
-        class="chat-list_cell clearfix"
-        v-for='(item, ind) in notice.contents'
-        :key='ind'>
-        <time class="chat-time">{{ item.time }}</time>
-        <!-- 回复者 -->
-        <div
-          class="chat-apply"
-          v-for='(it, inde) in item.contents'
-          :key='inde'
-          :class="[it.type == 0 ? 'chat-left fl' : 'chat-right fr']">
-          <img class="chat-list_avatar" :src="it.avatar" alt="" v-show='it.type == 0'>
-          <div class="apply_content">{{ it.content }}</div>
-          <img class="chat-list_avatar" :src="it.avatar" alt="" v-show='it.type == 1'>
-        </div>
+        class="chat-apply"
+        v-for='(it, inde) in item.contents'
+        :key='inde'
+        :class="[it.type == 0 ? 'chat-left fl' : 'chat-right fr']">
+        <img class="chat-list_avatar" :src="it.avatar" alt="" v-show='it.type == 0'>
+        <div class="apply_content">{{ it.content }}</div>
+        <img class="chat-list_avatar" :src="it.avatar" alt="" v-show='it.type == 1'>
       </div>
     </div>
   </div>
@@ -37,12 +35,6 @@ export default {
     ...mapGetters({
       notice: 'notice'
     })
-  },
-
-  watch: {
-    '$route'(to) {
-      
-    }
   },
 
   created() {

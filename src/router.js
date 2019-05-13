@@ -30,5 +30,9 @@ export default new Router({
       name: 'friendinfo',
       component: () => import('./views/FriendInfo.vue')
     }]
+  }, {
+    path: '/collection',
+    name: 'collection',
+    component: () => import('./views/Collection.vue')
   }]
 })

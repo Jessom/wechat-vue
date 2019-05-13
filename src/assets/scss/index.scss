@@ -42,6 +42,11 @@ img {
   background-color: $theme; color: #fff; text-align: center; height: 36px; line-height: 36px;
   border: 0; width: 120px; border-radius: $radius; outline: none; display: block; margin: 0 auto;
   &:active { background-color: darken($theme, 10); }
+
+  &.default {
+    background-color: transparent; border: 1px solid #ccc; color: $text; width: 90%; margin: 0 auto;
+    &:active { background-color: #ccc; }
+  }
 }
 
 .ellipsis {
